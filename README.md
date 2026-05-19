@@ -1,6 +1,4 @@
-# Codenixia Nexus Automation Solutions
-
-![Codenixia Logo or Banner (Placeholder)](https://via.placeholder.com/1200x300?text=Codenixia+Nexus+Automation+Solutions)
+# Codenixia Assessment
 
 Codenixia Nexus is a modern, full-stack business automation web application. It features an intelligent AI Chatbot powered by Google's Gemini API, a secure and rate-limited Lead Generation system, background email notifications, and an administrative dashboard to manage submissions.
 
