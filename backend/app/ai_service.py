@@ -24,7 +24,7 @@ def generate_chat_response(history, new_message: str) -> str:
             formatted_history.append({"role": role, "parts": [msg.content]})
         
         model = genai.GenerativeModel(
-            model_name='gemini-1.5-flash',
+            model_name='gemini-2.5-flash',
             system_instruction=SYSTEM_INSTRUCTION
         )
         
