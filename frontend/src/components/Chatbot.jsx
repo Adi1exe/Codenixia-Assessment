@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Send, Bot, User, Sparkles, Loader2, Maximize2, MoreHorizontal } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([

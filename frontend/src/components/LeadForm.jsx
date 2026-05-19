@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Mail, Briefcase, User, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export default function LeadForm() {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });
