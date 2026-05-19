@@ -1,7 +1,13 @@
-from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException
+from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List
+# pyrefly: ignore [missing-import]
+from slowapi import Limiter, _rate_limit_exceeded_handler
+# pyrefly: ignore [missing-import]
+from slowapi.util import get_remote_address
+# pyrefly: ignore [missing-import]
+from slowapi.errors import RateLimitExceeded
 
 from . import models, schemas, database
 from .ai_service import generate_chat_response
@@ -11,6 +17,10 @@ from .email_service import send_lead_notification
 models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI(title="Codenixia Nexus Automation Solutions API")
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # Configure CORS for React frontend
 app.add_middleware(
@@ -27,7 +37,9 @@ async def chat_endpoint(req: schemas.ChatRequest):
     return {"reply": response_text}
 
 @app.post("/api/leads", response_model=schemas.LeadResponse)
+@limiter.limit("5/minute")
 async def create_lead(
+    request: Request,
     lead: schemas.LeadCreate, 
     background_tasks: BackgroundTasks, 
     db: Session = Depends(database.get_db)
