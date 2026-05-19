@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Mail, Briefcase, User, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 const API_BASE = 'http://localhost:8000/api';
 
@@ -16,9 +17,11 @@ export default function LeadForm() {
       await axios.post(`${API_BASE}/leads`, formData);
       setStatus('success');
       setFormData({ name: '', email: '', company: '', message: '' });
+      toast.success('Lead captured successfully!');
       setTimeout(() => setStatus('idle'), 4000);
     } catch (error) {
       setStatus('error');
+      toast.error('Failed to capture lead. Please try again.');
       setTimeout(() => setStatus('idle'), 3000);
     }
   };

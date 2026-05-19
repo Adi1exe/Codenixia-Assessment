@@ -3,12 +3,24 @@ import Chatbot from './components/Chatbot';
 import LeadForm from './components/LeadForm';
 import Dashboard from './components/Dashboard';
 import { LayoutDashboard, Zap, Sparkles, ChevronRight } from 'lucide-react';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [view, setView] = useState('client'); // 'client' | 'admin'
 
   return (
     <div className="min-h-screen bg-background text-gray-200 font-sans selection:bg-primary/30 selection:text-white relative overflow-hidden">
+      <Toaster 
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: '#111827',
+            color: '#fff',
+            border: '1px solid rgba(255,255,255,0.1)',
+            backdropFilter: 'blur(10px)',
+          },
+        }}
+      />
       {/* Ambient Background Effects */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-accent/20 blur-[120px] mix-blend-screen pointer-events-none animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
