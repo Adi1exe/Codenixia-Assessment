@@ -67,6 +67,9 @@ SMTP_USERNAME=your_email@gmail.com
 SMTP_PASSWORD=your_app_password
 ```
 
+> [!WARNING]
+> **Render Free Tier SMTP Restriction:** Render's free tier has a security wall that blocks outgoing SMTP traffic (via `smtplib`) to prevent spam and scamming activities. Standard email sending will not function on Render's free tier; consider using an API-based mail service (e.g., SendGrid, Resend) or upgrading to a paid tier if SMTP is required.
+
 Run the backend server:
 ```bash
 uvicorn app.main:app --reload
