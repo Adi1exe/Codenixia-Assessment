@@ -12,9 +12,11 @@ export default {
         display: ['Outfit', 'system-ui', 'sans-serif'],
       },
       colors: {
-        background: '#030712', // gray-950
-        surface: 'rgba(17, 24, 39, 0.7)', // gray-900 with opacity for glassmorphism
-        surfaceBorder: 'rgba(255, 255, 255, 0.08)',
+        background: 'var(--background)',
+        surface: 'var(--surface)',
+        surfaceBorder: 'var(--surface-border)',
+        inputBg: 'var(--input-bg)',
+        inputBorder: 'var(--input-border)',
         accent: {
           light: '#38bdf8', // sky-400
           DEFAULT: '#0ea5e9', // sky-500
