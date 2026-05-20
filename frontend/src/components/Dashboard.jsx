@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Users, Activity, Database, ShieldCheck, ChevronRight, Terminal, X, Search, Copy, ExternalLink, Mail, Briefcase, User, Clock, Check } from 'lucide-react';
 
-const API_BASE = "https://codenixia-assessment.onrender.com/api";;
+const API_BASE = import.meta.env.VITE_API_URL || "https://codenixia-assessment.onrender.com/api";
 
 export default function Dashboard() {
   const [leads, setLeads] = useState([]);

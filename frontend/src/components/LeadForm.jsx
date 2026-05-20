@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Mail, Briefcase, User, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const API_BASE = "https://codenixia-assessment.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_URL || "https://codenixia-assessment.onrender.com/api";
 
 export default function LeadForm() {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });

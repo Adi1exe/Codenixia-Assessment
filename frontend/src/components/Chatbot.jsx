@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Send, Bot, User, Sparkles, Loader2, Maximize2, MoreHorizontal } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
-const API_BASE = "https://codenixia-assessment.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_URL || "https://codenixia-assessment.onrender.com/api";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
