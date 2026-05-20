@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Users, Activity, Database, ShieldCheck, ChevronRight, Terminal, X, Search, Copy, ExternalLink, Mail, Briefcase, User, Clock, Check } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_URL;
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
 
 export default function Dashboard() {
   const [leads, setLeads] = useState([]);
