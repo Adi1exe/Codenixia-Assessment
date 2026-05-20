@@ -10,4 +10,4 @@ class Lead(Base):
     email = Column(String, index=True)
     company = Column(String, nullable=True)
     message = Column(Text)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now)
