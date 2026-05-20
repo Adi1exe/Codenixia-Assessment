@@ -25,7 +25,10 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 # Configure CORS for React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # In production, replace with exact frontend domain
+    allow_origins=[
+        "http://localhost:5173", # Keep for local testing
+        "https://codenixia-assessment.vercel.app" # EXACT Vercel URL (No trailing slash!)
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
