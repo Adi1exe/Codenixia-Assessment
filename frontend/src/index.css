@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #f8fafc; /* slate-50 */
-  --surface: rgba(255, 255, 255, 0.7); /* glassy white */
-  --surface-border: rgba(15, 23, 42, 0.08);
-  --input-bg: rgba(15, 23, 42, 0.03);
-  --input-border: rgba(15, 23, 42, 0.08);
+  --background: #fbfbfa; /* Warm sandstone off-white */
+  --surface: rgba(250, 249, 245, 0.8); /* Warm semi-transparent bone */
+  --surface-border: rgba(120, 110, 90, 0.12); /* Soft warm gray border */
+  --input-bg: rgba(120, 110, 90, 0.04);
+  --input-border: rgba(120, 110, 90, 0.1);
 }
 
 .dark {
-  --background: #030712; /* gray-950 */
-  --surface: rgba(17, 24, 39, 0.7); /* gray-900 with opacity */
-  --surface-border: rgba(255, 255, 255, 0.08);
-  --input-bg: rgba(255, 255, 255, 0.05);
-  --input-border: rgba(255, 255, 255, 0.1);
+  --background: #070a0e; /* Obsidian deep dark coal */
+  --surface: rgba(13, 17, 24, 0.85); /* Obsidian glassy dark sheet */
+  --surface-border: rgba(255, 255, 255, 0.07);
+  --input-bg: rgba(255, 255, 255, 0.03);
+  --input-border: rgba(255, 255, 255, 0.06);
 }
 
 @layer base {

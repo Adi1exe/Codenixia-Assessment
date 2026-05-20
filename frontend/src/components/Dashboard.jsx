@@ -41,27 +41,27 @@ export default function Dashboard() {
       {/* Dashboard Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            Command Center <ShieldCheck size={28} className="text-primary dark:text-primary-light" />
+          <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2 italic">
+            Operations Ledger <ShieldCheck size={28} className="text-primary" />
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 text-sm">Real-time telemetry and active pipelines overview.</p>
+          <p className="text-slate-600 dark:text-gray-400 text-sm font-sans">Real-time process telemetry and system automation pipelines.</p>
         </div>
-        <div className="hidden md:flex items-center gap-3 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-600 dark:text-emerald-400 text-sm font-medium">
+        <div className="hidden md:flex items-center gap-3 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-lg text-emerald-600 dark:text-emerald-400 text-sm font-medium font-sans">
           <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
           System Optimal
         </div>
       </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-sans">
         <div className="glass p-6 rounded-2xl relative overflow-hidden group hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1">
           <div className="absolute -right-6 -top-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl group-hover:bg-accent/30 transition-colors"></div>
           <div className="relative z-10 flex items-start justify-between">
             <div>
-              <p className="text-slate-500 dark:text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1">Captured Leads</p>
+              <p className="text-slate-500 dark:text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1">Transmitted Projects</p>
               <h3 className="text-4xl font-display font-bold text-slate-900 dark:text-white">{leads.length}</h3>
             </div>
-            <div className="p-3 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl text-accent dark:text-accent-light shadow-inner">
+            <div className="p-3 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl text-accent shadow-inner">
               <Users size={24} />
             </div>
           </div>
@@ -74,10 +74,10 @@ export default function Dashboard() {
           <div className="absolute -right-6 -top-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors"></div>
           <div className="relative z-10 flex items-start justify-between">
             <div>
-              <p className="text-slate-500 dark:text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1">Active Pipelines</p>
+              <p className="text-slate-500 dark:text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1">Automation Flows</p>
               <h3 className="text-4xl font-display font-bold text-slate-900 dark:text-white">{leads.length * 3}</h3>
             </div>
-            <div className="p-3 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl text-primary dark:text-primary-light shadow-inner">
+            <div className="p-3 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl text-primary shadow-inner">
               <Activity size={24} />
             </div>
           </div>
@@ -90,8 +90,8 @@ export default function Dashboard() {
           <div className="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-colors"></div>
           <div className="relative z-10 flex items-start justify-between">
             <div>
-              <p className="text-slate-500 dark:text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1">Database Uplink</p>
-              <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mt-1">Synchronized</h3>
+              <p className="text-slate-500 dark:text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1">Database Sync</p>
+              <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mt-1 italic">Active</h3>
             </div>
             <div className="p-3 bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl text-emerald-600 dark:text-emerald-400 shadow-inner">
               <Database size={24} />
@@ -106,24 +106,24 @@ export default function Dashboard() {
       {/* Data Table */}
       <div className="glass rounded-2xl overflow-hidden shadow-2xl">
         <div className="p-5 border-b border-slate-900/10 dark:border-white/10 bg-slate-900/5 dark:bg-white/5 flex items-center justify-between backdrop-blur-md">
-          <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <Terminal size={18} className="text-primary dark:text-primary-light" /> Intel Matrix
+          <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white flex items-center gap-2 italic">
+            <Terminal size={18} className="text-primary" /> Specification Ledger
           </h3>
           <button 
             onClick={() => setShowAllReportsModal(true)}
-            className="text-xs font-medium text-primary hover:text-slate-900 dark:text-primary-light dark:hover:text-white transition-colors flex items-center gap-1"
+            className="text-xs font-semibold text-primary hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1 font-sans"
           >
-            View All Reports <ChevronRight size={14} />
+            Inspect All Telemetry <ChevronRight size={14} />
           </button>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm text-slate-700 dark:text-gray-300">
+          <table className="w-full text-left text-sm text-slate-700 dark:text-gray-300 font-sans">
             <thead className="bg-slate-900/5 dark:bg-black/20 text-[11px] uppercase tracking-widest font-bold text-slate-500 dark:text-gray-500 border-b border-slate-900/10 dark:border-white/10">
               <tr>
-                <th className="px-6 py-4">Designation (ID)</th>
-                <th className="px-6 py-4">Client Entity</th>
+                <th className="px-6 py-4">Project ID</th>
+                <th className="px-6 py-4">Client Contact</th>
                 <th className="px-6 py-4">Organization</th>
-                <th className="px-6 py-4">Protocol Specifications</th>
+                <th className="px-6 py-4">System Scope</th>
                 <th className="px-6 py-4 text-right">Timestamp</th>
               </tr>
             </thead>
@@ -133,14 +133,14 @@ export default function Dashboard() {
                   <td colSpan="5" className="px-6 py-12 text-center">
                     <div className="flex flex-col items-center justify-center text-primary dark:text-primary-light">
                       <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin mb-3"></div>
-                      <span className="text-sm font-medium tracking-wide">Syncing Telemetry...</span>
+                      <span className="text-sm font-medium tracking-wide">Syncing Database...</span>
                     </div>
                   </td>
                 </tr>
               ) : leads.length === 0 ? (
                 <tr>
                   <td colSpan="5" className="px-6 py-12 text-center">
-                    <div className="text-slate-400 dark:text-gray-500 font-medium text-sm">No transmissions intercepted yet.</div>
+                    <div className="text-slate-400 dark:text-gray-500 font-medium text-sm">No requirements records found.</div>
                   </td>
                 </tr>
               ) : (
@@ -167,7 +167,7 @@ export default function Dashboard() {
                           {lead.company}
                         </span>
                       ) : (
-                        <span className="text-slate-400 dark:text-gray-600 italic">Classified</span>
+                        <span className="text-slate-400 dark:text-gray-600 italic">N/A</span>
                       )}
                     </td>
                     <td className="px-6 py-4 max-w-xs">
@@ -192,8 +192,8 @@ export default function Dashboard() {
           <div className="glass w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl border border-slate-900/10 dark:border-white/10 relative">
             {/* Header */}
             <div className="p-5 border-b border-slate-900/10 dark:border-white/10 bg-slate-900/5 dark:bg-white/5 flex items-center justify-between">
-              <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Terminal size={18} className="text-primary dark:text-primary-light" /> Nexus Signal Details
+              <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white flex items-center gap-2 italic">
+                <Terminal size={18} className="text-primary" /> Specification Details
               </h3>
               <button 
                 onClick={() => setSelectedLead(null)}
@@ -221,8 +221,8 @@ export default function Dashboard() {
                     <User size={16} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-slate-500 dark:text-gray-500 uppercase tracking-wider">Lead Name</p>
-                    <p className="text-slate-900 dark:text-white font-medium">{selectedLead.name}</p>
+                    <p className="text-[10px] font-bold text-slate-500 dark:text-gray-500 uppercase tracking-wider">Engineer Name</p>
+                    <p className="text-slate-900 dark:text-white font-medium font-sans">{selectedLead.name}</p>
                   </div>
                 </div>
 
@@ -247,21 +247,21 @@ export default function Dashboard() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold text-slate-500 dark:text-gray-500 uppercase tracking-wider">Organization</p>
-                    <p className="text-slate-900 dark:text-white font-medium">{selectedLead.company || 'Classified'}</p>
+                    <p className="text-slate-900 dark:text-white font-medium font-sans">{selectedLead.company || 'N/A'}</p>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-2">
-                <p className="text-[10px] font-bold text-slate-500 dark:text-gray-500 uppercase tracking-wider">Workflow Specifications</p>
-                <div className="bg-slate-900/5 dark:bg-black/30 border border-slate-900/5 dark:border-white/5 p-4 rounded-xl max-h-48 overflow-y-auto text-sm text-slate-800 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
+                <p className="text-[10px] font-bold text-slate-500 dark:text-gray-500 uppercase tracking-wider">System Scope Parameters</p>
+                <div className="bg-slate-900/5 dark:bg-black/30 border border-slate-900/5 dark:border-white/5 p-4 rounded-xl max-h-48 overflow-y-auto text-sm text-slate-800 dark:text-gray-300 whitespace-pre-wrap leading-relaxed font-sans">
                   {selectedLead.message}
                 </div>
               </div>
             </div>
 
             {/* Footer */}
-            <div className="p-4 border-t border-slate-900/10 dark:border-white/10 bg-slate-900/5 dark:bg-white/5 flex justify-end gap-3">
+            <div className="p-4 border-t border-slate-900/10 dark:border-white/10 bg-slate-900/5 dark:bg-white/5 flex justify-end gap-3 font-sans">
               <button
                 onClick={() => handleCopy(`det-${selectedLead.id}`, selectedLead.message)}
                 className="px-4 py-2 bg-slate-900/5 dark:bg-white/5 hover:bg-slate-900/10 dark:hover:bg-white/10 text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors border border-slate-900/10 dark:border-white/10"
@@ -272,7 +272,7 @@ export default function Dashboard() {
                   </>
                 ) : (
                   <>
-                    <Copy size={14} /> Copy Specs
+                    <Copy size={14} /> Copy Parameters
                   </>
                 )}
               </button>
@@ -280,7 +280,7 @@ export default function Dashboard() {
                 onClick={() => setSelectedLead(null)}
                 className="px-4 py-2 bg-primary/20 hover:bg-primary/30 text-primary dark:text-white rounded-lg text-xs font-semibold transition-colors border border-primary/30"
               >
-                Close Signal
+                Close Panel
               </button>
             </div>
           </div>
@@ -294,10 +294,10 @@ export default function Dashboard() {
             {/* Header */}
             <div className="p-5 border-b border-slate-900/10 dark:border-white/10 bg-slate-900/5 dark:bg-white/5 flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <Database size={18} className="text-primary dark:text-primary-light" /> Intel Matrix - All Telemetry
+                <h3 className="text-lg font-display font-bold text-slate-900 dark:text-white flex items-center gap-2 italic">
+                  <Database size={18} className="text-primary" /> Workflow Matrix - All Telemetry
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-gray-400 mt-1 font-sans">Showing {leads.length} records captured in total</p>
+                <p className="text-xs text-slate-600 dark:text-gray-400 mt-1 font-sans">Showing {leads.length} specifications loaded in total</p>
               </div>
               <button 
                 onClick={() => {
@@ -392,7 +392,7 @@ export default function Dashboard() {
                             onClick={() => setSelectedLead(lead)}
                             className="px-2.5 py-1 bg-primary/10 hover:bg-primary/20 text-primary dark:text-primary-light border border-primary/20 rounded text-[11px] font-medium transition-colors font-sans"
                           >
-                            View Signal Details
+                            View Project Scope
                           </button>
                         </div>
                       </div>
@@ -402,7 +402,7 @@ export default function Dashboard() {
             </div>
 
             {/* Footer */}
-            <div className="p-4 border-t border-slate-900/10 dark:border-white/10 bg-slate-900/5 dark:bg-white/5 flex justify-end">
+            <div className="p-4 border-t border-slate-900/10 dark:border-white/10 bg-slate-900/5 dark:bg-white/5 flex justify-end font-sans">
               <button
                 onClick={() => {
                   setShowAllReportsModal(false);
@@ -410,7 +410,7 @@ export default function Dashboard() {
                 }}
                 className="px-4 py-2 bg-slate-900/5 dark:bg-white/5 hover:bg-slate-900/10 dark:hover:bg-white/10 text-slate-700 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white rounded-lg text-xs font-semibold transition-colors border border-slate-900/10 dark:border-white/10"
               >
-                Close Matrix
+                Close Ledger
               </button>
             </div>
           </div>

@@ -49,7 +49,7 @@ function App() {
               <Zap size={22} className="text-white" fill="currentColor" />
             </div>
             <h1 className="text-2xl font-display font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
-              Codenixia <span className="text-gradient">Nexus</span>
+              Codenixia <span className="text-gradient font-normal italic">Systems</span>
             </h1>
           </div>
           
@@ -63,8 +63,8 @@ function App() {
                     : 'text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-900/5 dark:hover:bg-white/5 scale-95'
                 }`}
               >
-                <Sparkles size={16} className={view === 'client' ? 'text-accent-light' : 'opacity-0 w-0 h-0 transition-all'} />
-                Workspace
+                <Sparkles size={16} className={view === 'client' ? 'text-accent' : 'opacity-0 w-0 h-0 transition-all'} />
+                Workflow Studio
               </button>
               <button 
                 onClick={() => setView('admin')}
@@ -74,8 +74,8 @@ function App() {
                     : 'text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-900/5 dark:hover:bg-white/5 scale-95'
                 }`}
               >
-                <LayoutDashboard size={16} className={view === 'admin' ? 'text-primary-light' : ''} /> 
-                Control Center
+                <LayoutDashboard size={16} className={view === 'admin' ? 'text-primary' : ''} /> 
+                Operations Ledger
               </button>
             </div>
 
@@ -87,9 +87,9 @@ function App() {
               title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             >
               {theme === 'dark' ? (
-                <Sun size={20} className="text-amber-400" />
+                <Sun size={20} className="text-amber-500" />
               ) : (
-                <Moon size={20} className="text-indigo-600" />
+                <Moon size={20} className="text-indigo-500" />
               )}
             </button>
           </div>
@@ -102,11 +102,11 @@ function App() {
         {view === 'client' && (
           <div className="mb-12 text-center max-w-3xl mx-auto animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-4 leading-tight">
-              Automate Your <br />
-              <span className="text-gradient">Business Intelligence</span>
+              Crafted Business <br />
+              <span className="text-gradient font-normal italic">Workflow & Automation</span>
             </h2>
-            <p className="text-lg text-slate-600 dark:text-gray-400">
-              Deploy custom AI agents, optimize workflows, and capture high-quality leads on autopilot with Codenixia Nexus.
+            <p className="text-lg text-slate-600 dark:text-gray-400 font-sans">
+              Design bespoke digital architectures, streamline processes, and monitor operational telemetry with Codenixia Systems.
             </p>
           </div>
         )}

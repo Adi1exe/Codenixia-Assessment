@@ -32,29 +32,29 @@ export default function LeadForm() {
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] pointer-events-none"></div>
 
       <div className="relative z-10">
-        <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-3">Architect Your Future</h2>
-        <p className="text-slate-600 dark:text-gray-400 text-sm mb-8 leading-relaxed">
-          Provide your project specifications. Our systems engineers will analyze your requirements and design a custom automation workflow.
+        <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-3 italic">Design Your System</h2>
+        <p className="text-slate-600 dark:text-gray-400 text-sm mb-8 leading-relaxed font-sans">
+          Provide your baseline requirements. Our systems architects will review the parameters to draft custom automation blueprints.
         </p>
 
         {status === 'success' ? (
           <div className="flex flex-col items-center justify-center py-16 text-center animate-fade-in">
             <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mb-6">
-              <CheckCircle2 className="text-emerald-400 w-10 h-10" />
+              <CheckCircle2 className="text-emerald-500 dark:text-emerald-400 w-10 h-10" />
             </div>
-            <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-3">Data Synthesized</h3>
-            <p className="text-slate-600 dark:text-gray-400 text-sm max-w-xs mx-auto">
-              Your requirements have been securely transmitted to our engineering team. Expect contact shortly.
+            <h3 className="text-2xl font-display font-bold text-slate-900 dark:text-white mb-3">System Specifications Saved</h3>
+            <p className="text-slate-600 dark:text-gray-400 text-sm max-w-xs mx-auto font-sans">
+              Your configuration parameters have been received. We will contact you with the initial blueprint drafts.
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5 animate-fade-in">
             <div className="group">
-              <label className="block text-[11px] font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2 transition-colors group-focus-within:text-primary-light">
-                Lead Engineer (Name)
+              <label className="block text-[11px] font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2 transition-colors group-focus-within:text-primary">
+                Lead Engineer Name
               </label>
               <div className="relative">
-                <User className={`absolute left-4 top-3.5 w-5 h-5 transition-colors ${activeField === 'name' ? 'text-primary-light' : 'text-slate-400 dark:text-gray-500'}`} />
+                <User className={`absolute left-4 top-3.5 w-5 h-5 transition-colors ${activeField === 'name' ? 'text-primary' : 'text-slate-400 dark:text-gray-500'}`} />
                 <input 
                   required 
                   type="text" 
@@ -62,18 +62,18 @@ export default function LeadForm() {
                   onFocus={() => setActiveField('name')}
                   onBlur={() => setActiveField(null)}
                   onChange={e => setFormData({...formData, name: e.target.value})} 
-                  className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl py-3 pl-12 pr-4 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:bg-slate-900/10 dark:focus:bg-white/10 focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-400 dark:placeholder:text-gray-600" 
+                  className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl py-3 pl-12 pr-4 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:bg-slate-900/10 dark:focus:bg-white/10 focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-400 dark:placeholder:text-gray-600 font-sans" 
                   placeholder="Jane Doe" 
                 />
               </div>
             </div>
             
             <div className="group">
-              <label className="block text-[11px] font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2 transition-colors group-focus-within:text-accent-light">
+              <label className="block text-[11px] font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2 transition-colors group-focus-within:text-accent">
                 Email Address
               </label>
               <div className="relative">
-                <Mail className={`absolute left-4 top-3.5 w-5 h-5 transition-colors ${activeField === 'email' ? 'text-accent-light' : 'text-slate-400 dark:text-gray-500'}`} />
+                <Mail className={`absolute left-4 top-3.5 w-5 h-5 transition-colors ${activeField === 'email' ? 'text-accent' : 'text-slate-400 dark:text-gray-500'}`} />
                 <input 
                   required 
                   type="email" 
@@ -81,36 +81,36 @@ export default function LeadForm() {
                   onFocus={() => setActiveField('email')}
                   onBlur={() => setActiveField(null)}
                   onChange={e => setFormData({...formData, email: e.target.value})} 
-                  className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl py-3 pl-12 pr-4 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-accent focus:bg-slate-900/5 dark:focus:bg-accent/5 focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-400 dark:placeholder:text-gray-600" 
+                  className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl py-3 pl-12 pr-4 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-accent focus:bg-slate-900/5 dark:focus:bg-accent/5 focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-400 dark:placeholder:text-gray-600 font-sans" 
                   placeholder="jane@enterprise.com" 
                 />
               </div>
             </div>
 
             <div className="group">
-              <label className="block text-[11px] font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2 transition-colors group-focus-within:text-primary-light">
+              <label className="block text-[11px] font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2 transition-colors group-focus-within:text-primary">
                 Organization (Optional)
               </label>
               <div className="relative">
-                <Briefcase className={`absolute left-4 top-3.5 w-5 h-5 transition-colors ${activeField === 'company' ? 'text-primary-light' : 'text-slate-400 dark:text-gray-500'}`} />
+                <Briefcase className={`absolute left-4 top-3.5 w-5 h-5 transition-colors ${activeField === 'company' ? 'text-primary' : 'text-slate-400 dark:text-gray-500'}`} />
                 <input 
                   type="text" 
                   value={formData.company} 
                   onFocus={() => setActiveField('company')}
                   onBlur={() => setActiveField(null)}
                   onChange={e => setFormData({...formData, company: e.target.value})} 
-                  className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl py-3 pl-12 pr-4 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:bg-slate-900/10 dark:focus:bg-white/10 focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-400 dark:placeholder:text-gray-600" 
+                  className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl py-3 pl-12 pr-4 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:bg-slate-900/10 dark:focus:bg-white/10 focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-400 dark:placeholder:text-gray-600 font-sans" 
                   placeholder="Acme Corp" 
                 />
               </div>
             </div>
 
             <div className="group">
-              <label className="block text-[11px] font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2 transition-colors group-focus-within:text-primary-light">
-                Workflow Specifications
+              <label className="block text-[11px] font-bold text-slate-500 dark:text-gray-400 uppercase tracking-widest mb-2 transition-colors group-focus-within:text-primary">
+                System Parameters & Scope
               </label>
               <div className="relative">
-                <MessageSquare className={`absolute left-4 top-4 w-5 h-5 transition-colors ${activeField === 'message' ? 'text-primary-light' : 'text-slate-400 dark:text-gray-500'}`} />
+                <MessageSquare className={`absolute left-4 top-4 w-5 h-5 transition-colors ${activeField === 'message' ? 'text-primary' : 'text-slate-400 dark:text-gray-500'}`} />
                 <textarea 
                   required 
                   rows={4} 
@@ -118,8 +118,8 @@ export default function LeadForm() {
                   onFocus={() => setActiveField('message')}
                   onBlur={() => setActiveField(null)}
                   onChange={e => setFormData({...formData, message: e.target.value})} 
-                  className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl py-3 pl-12 pr-4 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:bg-slate-900/10 dark:focus:bg-white/10 focus:ring-1 focus:ring-primary transition-all resize-none placeholder:text-slate-400 dark:placeholder:text-gray-600" 
-                  placeholder="Describe the processes you need automated..." 
+                  className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 rounded-xl py-3 pl-12 pr-4 text-slate-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:bg-slate-900/10 dark:focus:bg-white/10 focus:ring-1 focus:ring-primary transition-all resize-none placeholder:text-slate-400 dark:placeholder:text-gray-600 font-sans" 
+                  placeholder="Outline the core workflows, tools, and endpoints you need automated..." 
                 />
               </div>
             </div>
@@ -129,13 +129,13 @@ export default function LeadForm() {
               disabled={status === 'loading'} 
               className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary-light hover:to-accent-light text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40 flex justify-center items-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed mt-4"
             >
-              {status === 'loading' ? 'Establishing Connection...' : 'Initialize Engagement'}
-              {!status === 'loading' && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
+              {status === 'loading' ? 'Transmitting Parameters...' : 'Transmit Specifications'}
+              {status !== 'loading' && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
             </button>
             
             {status === 'error' && (
               <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg animate-fade-in mt-4">
-                <p className="text-red-400 text-sm text-center font-medium">Critical Failure: Unable to establish uplink. Please retry.</p>
+                <p className="text-red-600 dark:text-red-400 text-sm text-center font-medium">Critical Failure: Uplink transmission interrupted. Please try again.</p>
               </div>
             )}
           </form>

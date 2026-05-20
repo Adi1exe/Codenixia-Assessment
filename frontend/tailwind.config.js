@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Outfit', 'system-ui', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'serif'],
       },
       colors: {
         background: 'var(--background)',
@@ -18,14 +18,14 @@ export default {
         inputBg: 'var(--input-bg)',
         inputBorder: 'var(--input-border)',
         accent: {
-          light: '#38bdf8', // sky-400
-          DEFAULT: '#0ea5e9', // sky-500
-          dark: '#0284c7', // sky-600
+          light: '#fb923c', // orange-400
+          DEFAULT: '#ea580c', // orange-600
+          dark: '#c2410c', // orange-700
         },
         primary: {
-          light: '#a78bfa', // violet-400
-          DEFAULT: '#8b5cf6', // violet-500
-          dark: '#7c3aed', // violet-600
+          light: '#2dd4bf', // teal-400
+          DEFAULT: '#0d9488', // teal-600
+          dark: '#0f766e', // teal-700
         }
       },
       animation: {

@@ -57,10 +57,10 @@ export default function Chatbot() {
             <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-background rounded-full animate-pulse"></span>
           </div>
           <div>
-            <h3 className="font-display font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2">
-              Nexus AI <Sparkles size={14} className="text-accent-light" />
+            <h3 className="font-display font-bold text-slate-900 dark:text-white text-lg flex items-center gap-2 italic">
+              Codenixia Assistant <Sparkles size={14} className="text-accent" />
             </h3>
-            <p className="text-xs text-slate-500 dark:text-gray-400 font-medium">Powered by Advanced LLM</p>
+            <p className="text-xs text-slate-500 dark:text-gray-400 font-medium font-sans">Systems Synthesis Engine</p>
           </div>
         </div>
         <div className="flex gap-2">
@@ -90,11 +90,11 @@ export default function Chatbot() {
                 : 'bg-slate-900/5 dark:bg-white/5 text-slate-800 dark:text-gray-200 border border-slate-900/10 dark:border-white/10 rounded-tl-sm hover:border-slate-900/20 dark:hover:border-white/20'
             }`}>
               {msg.role === 'assistant' ? (
-                <div className="prose prose-slate dark:prose-invert prose-sm max-w-none prose-p:leading-relaxed prose-pre:bg-slate-900/5 dark:prose-pre:bg-black/50 prose-pre:border prose-pre:border-slate-900/10 dark:prose-pre:border-white/10 prose-a:text-primary dark:prose-a:text-primary-light">
+                <div className="prose prose-slate dark:prose-invert prose-sm max-w-none prose-p:leading-relaxed prose-pre:bg-slate-900/5 dark:prose-pre:bg-black/50 prose-pre:border prose-pre:border-slate-900/10 dark:prose-pre:border-white/10 prose-a:text-primary dark:prose-a:text-primary-light font-sans">
                   <ReactMarkdown>{msg.content}</ReactMarkdown>
                 </div>
               ) : (
-                msg.content
+                <span className="font-sans">{msg.content}</span>
               )}
             </div>
           </div>
@@ -105,13 +105,13 @@ export default function Chatbot() {
               <Bot size={20} />
             </div>
             <div className="p-4 rounded-2xl bg-slate-900/5 dark:bg-white/5 text-slate-500 dark:text-gray-400 border border-slate-900/10 dark:border-white/10 rounded-tl-sm flex gap-3 items-center">
-              <Loader2 size={16} className="animate-spin text-primary-light" />
-              <span className="font-medium text-sm">Synthesizing response...</span>
+              <Loader2 size={16} className="animate-spin text-primary" />
+              <span className="font-medium text-sm font-sans">Processing parameters...</span>
             </div>
           </div>
         )}
       </div>
-
+ 
       {/* Chat Input */}
       <div className="p-5 border-t border-slate-900/10 dark:border-white/10 bg-slate-900/5 dark:bg-black/20 backdrop-blur-md">
         <form onSubmit={handleSend} className="relative group">
@@ -119,19 +119,19 @@ export default function Chatbot() {
             type="text" 
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask Nexus AI about your systems..."
-            className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 hover:border-slate-900/20 dark:hover:border-white/20 rounded-xl pl-5 pr-14 py-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-400 dark:placeholder:text-gray-500 shadow-inner"
+            placeholder="Consult Assistant on automation flows..."
+            className="w-full bg-slate-900/5 dark:bg-white/5 border border-slate-900/10 dark:border-white/10 hover:border-slate-900/20 dark:hover:border-white/20 rounded-xl pl-5 pr-14 py-4 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-slate-400 dark:placeholder:text-gray-500 shadow-inner font-sans"
           />
           <button 
             type="submit" 
             disabled={loading || !input.trim()} 
-            className="absolute right-2 top-2 bottom-2 bg-primary hover:bg-primary-light text-white p-2.5 rounded-lg transition-all disabled:opacity-50 disabled:hover:bg-primary flex items-center justify-center shadow-lg shadow-primary/20 disabled:shadow-none"
+            className="absolute right-2 top-2 bottom-2 bg-primary hover:bg-primary/80 text-white p-2.5 rounded-lg transition-all disabled:opacity-50 disabled:hover:bg-primary flex items-center justify-center shadow-lg shadow-primary/20 disabled:shadow-none"
           >
             <Send size={18} className={input.trim() && !loading ? 'translate-x-0.5 -translate-y-0.5 transition-transform' : ''} />
           </button>
         </form>
-        <p className="text-center text-[11px] text-slate-400 dark:text-gray-500 mt-3 font-medium">
-          Nexus AI can make mistakes. Consider verifying critical information.
+        <p className="text-center text-[11px] text-slate-400 dark:text-gray-500 mt-3 font-medium font-sans">
+          Assistant output should be validated prior to production staging.
         </p>
       </div>
     </div>
