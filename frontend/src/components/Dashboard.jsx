@@ -42,7 +42,7 @@ export default function Dashboard() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2 italic">
-            Operations Ledger <ShieldCheck size={28} className="text-primary" />
+            Control Center <ShieldCheck size={28} className="text-primary" />
           </h2>
           <p className="text-slate-600 dark:text-gray-400 text-sm font-sans">Real-time process telemetry and system automation pipelines.</p>
         </div>

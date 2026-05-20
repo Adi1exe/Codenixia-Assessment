@@ -31,16 +31,16 @@ def send_lead_notification(name: str, email: str, company: str, message: str):
     html_body = f"""
     <!DOCTYPE html>
     <html>
-    <body style="margin: 0; padding: 0; background-color: #030712; color: #e5e7eb; font-family: 'Inter', -apple-system, sans-serif;">
-        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #030712; padding: 40px 20px;">
+    <body style="margin: 0; padding: 0; background-color: 
+        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: 
             <tr>
                 <td align="center">
-                    <table width="600" cellpadding="0" cellspacing="0" style="background-color: #111827; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+                    <table width="600" cellpadding="0" cellspacing="0" style="background-color: 
                         <!-- Header -->
                         <tr>
                             <td style="background: linear-gradient(to right, rgba(139, 92, 246, 0.2), rgba(14, 165, 233, 0.2)); padding: 30px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center;">
-                                <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Codenixia <span style="color: #0ea5e9;">Nexus</span></h1>
-                                <p style="margin: 5px 0 0; color: #8b5cf6; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">System Alert: New Lead Captured</p>
+                                <h1 style="margin: 0; color: 
+                                <p style="margin: 5px 0 0; color: 
                             </td>
                         </tr>
                         <!-- Content -->
@@ -49,26 +49,26 @@ def send_lead_notification(name: str, email: str, company: str, message: str):
                                 <table width="100%" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <td style="padding-bottom: 20px;">
-                                            <p style="margin: 0; font-size: 11px; text-transform: uppercase; color: #9ca3af; letter-spacing: 1px; font-weight: 600;">Lead Engineer (Name)</p>
-                                            <p style="margin: 5px 0 0; font-size: 16px; color: #ffffff; font-weight: 500;">{name}</p>
+                                            <p style="margin: 0; font-size: 11px; text-transform: uppercase; color: 
+                                            <p style="margin: 5px 0 0; font-size: 16px; color: 
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="padding-bottom: 20px;">
-                                            <p style="margin: 0; font-size: 11px; text-transform: uppercase; color: #9ca3af; letter-spacing: 1px; font-weight: 600;">Secure Comms (Email)</p>
-                                            <p style="margin: 5px 0 0; font-size: 16px;"><a href="mailto:{email}" style="color: #0ea5e9; text-decoration: none;">{email}</a></p>
+                                            <p style="margin: 0; font-size: 11px; text-transform: uppercase; color: 
+                                            <p style="margin: 5px 0 0; font-size: 16px;"><a href="mailto:{email}" style="color: 
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="padding-bottom: 20px;">
-                                            <p style="margin: 0; font-size: 11px; text-transform: uppercase; color: #9ca3af; letter-spacing: 1px; font-weight: 600;">Organization</p>
-                                            <p style="margin: 5px 0 0; font-size: 16px; color: #ffffff; font-weight: 500;">{company or '<span style="color: #6b7280; font-style: italic;">Classified</span>'}</p>
+                                            <p style="margin: 0; font-size: 11px; text-transform: uppercase; color: 
+                                            <p style="margin: 5px 0 0; font-size: 16px; color: 
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 20px; background-color: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px;">
-                                            <p style="margin: 0 0 10px; font-size: 11px; text-transform: uppercase; color: #9ca3af; letter-spacing: 1px; font-weight: 600;">Workflow Specifications</p>
-                                            <p style="margin: 0; font-size: 15px; color: #d1d5db; line-height: 1.6;">{message}</p>
+                                            <p style="margin: 0 0 10px; font-size: 11px; text-transform: uppercase; color: 
+                                            <p style="margin: 0; font-size: 15px; color: 
                                         </td>
                                     </tr>
                                 </table>
@@ -77,7 +77,7 @@ def send_lead_notification(name: str, email: str, company: str, message: str):
                         <!-- Footer -->
                         <tr>
                             <td style="padding: 20px; background-color: rgba(0,0,0,0.2); border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
-                                <p style="margin: 0; font-size: 12px; color: #6b7280;">Automated Transmission from Nexus Server Core.</p>
+                                <p style="margin: 0; font-size: 12px; color: 
                             </td>
                         </tr>
                     </table>
@@ -90,7 +90,7 @@ def send_lead_notification(name: str, email: str, company: str, message: str):
 
     msg = MIMEMultipart('alternative')
     msg['From'] = sender_email
-    msg['To'] = sender_email # Sending to admin/self
+    msg['To'] = sender_email 
     msg['Subject'] = subject
     
     part1 = MIMEText(text_body, 'plain')

@@ -6,7 +6,7 @@ import { LayoutDashboard, Zap, Sparkles, ChevronRight, Sun, Moon } from 'lucide-
 import { Toaster } from 'react-hot-toast';
 
 function App() {
-  const [view, setView] = useState('client'); // 'client' | 'admin'
+  const [view, setView] = useState('client');
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') || 'dark';
@@ -64,7 +64,7 @@ function App() {
                 }`}
               >
                 <Sparkles size={16} className={view === 'client' ? 'text-accent' : 'opacity-0 w-0 h-0 transition-all'} />
-                Workflow Studio
+                Client Workspace
               </button>
               <button 
                 onClick={() => setView('admin')}
@@ -75,7 +75,7 @@ function App() {
                 }`}
               >
                 <LayoutDashboard size={16} className={view === 'admin' ? 'text-primary' : ''} /> 
-                Operations Ledger
+                Control Center
               </button>
             </div>
 

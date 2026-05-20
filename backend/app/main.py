@@ -2,18 +2,18 @@ from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List
-# pyrefly: ignore [missing-import]
+
 from slowapi import Limiter, _rate_limit_exceeded_handler
-# pyrefly: ignore [missing-import]
+
 from slowapi.util import get_remote_address
-# pyrefly: ignore [missing-import]
+
 from slowapi.errors import RateLimitExceeded
 
 from . import models, schemas, database
 from .ai_service import generate_chat_response
 from .email_service import send_lead_notification
 
-# Create DB tables
+
 models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI(title="Codenixia Nexus Automation Solutions API")
@@ -22,12 +22,12 @@ limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-# Configure CORS for React frontend
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173", # Keep for local testing
-        "https://codenixia-assessment.vercel.app" # EXACT Vercel URL (No trailing slash!)
+        "http://localhost:5173", 
+        "https://codenixia-assessment.vercel.app" 
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -52,7 +52,7 @@ async def create_lead(
     db.commit()
     db.refresh(db_lead)
     
-    # Trigger asynchronous email
+    
     background_tasks.add_task(
         send_lead_notification,
         name=lead.name,

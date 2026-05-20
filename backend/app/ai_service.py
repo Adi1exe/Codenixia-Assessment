@@ -17,7 +17,7 @@ CRITICAL RULE: If a user asks about custom automation, enterprise pricing, or se
 
 def generate_chat_response(history, new_message: str) -> str:
     try:
-        # Convert our history format to Gemini's format
+        
         formatted_history = []
         for msg in history:
             role = "user" if msg.role == "user" else "model"

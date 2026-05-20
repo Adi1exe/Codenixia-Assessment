@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./automation.db"
 
-# check_same_thread is needed for SQLite
+
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
